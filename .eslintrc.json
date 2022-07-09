@@ -1,0 +1,81 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        // Problem: “no-undef”
+        // Error sample: ‘test’ is not defined
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "react-hooks"
+    ],
+    "rules": {
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off",
+        // Problem: “‘no-use-before-define”
+        // Error sample: ‘React’ was used before it was defined
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": [
+            "error"
+        ],
+        // Problem: “‘react/jsx-filename-extension”
+        // Error sample: JSX not allowed in files with extension ‘.tsx’
+        "react/jsx-filename-extension": [
+            "warn",
+            {
+                "extensions": [
+                    ".tsx"
+                ]
+            }
+        ],
+        // Problem: “import/extensions”
+        // Error sample: Missing file extension ‘tsx’ for ‘./App’
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        // Problem: “no-shadow”
+        // Error sample: ‘Enum’ is already declared in the upper scope
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": [
+            "error"
+        ],
+        //Extra rules, no necessary to basic config
+        // "@typescript-eslint/explicit-function-return-type": [
+        //     "error",
+        //     {
+        //         "allowExpressions": true
+        //     }
+        // ],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "import/prefer-default-export": "off",
+        "react/prop-types": "off"
+    },
+    // Problem: “import/no-unresolved”
+    // Error sample: Unable to resolve path to module ‘./App’
+    // npm install eslint-import-resolver-typescript --save-dev
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        }
+    }
+}
