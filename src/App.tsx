@@ -1,8 +1,11 @@
+import { ClientProvider } from './contexts/client/ClientContext';
 import { Router } from './routes/Router';
 
 function App() {
   return (
-    <Router />
+    <ClientProvider>
+      <Router />
+    </ClientProvider>
   );
 }
 
