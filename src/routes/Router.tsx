@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from '../layout/Layout';
-import { Client } from '../pages/Client/Client';
-import { ClientById } from '../pages/Client/ClientById';
+import { Client } from '../pages/client/Client';
+import { ClientById } from '../pages/client/ClientById';
 import { Home } from '../pages/Home';
 
 export function Router() {

@@ -10,35 +10,11 @@ import {
   Flex,
   Heading,
 } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
-interface Client {
-  id: string;
-  active: boolean;
-  sponsor: boolean;
-  name: string;
-  birthdate?: string | '';
-  cpf: string;
-  email: string | '';
-  phone: string;
-  consultationPrice: number;
-  createdAt: string;
-  updatedAt: string | null;
-}
+import { useClient } from '../../contexts/client/ClientContext';
 
 export function Client() {
-  const [clients, setClients] = useState<Client[]>([]);
-
-  useEffect(() => {
-    (async () => {
-      const clientList = await fetch('http://localhost:3001/clients', { method: 'GET' }).then((response) => response.json());
-
-      // setTimeout(() => {
-      setClients(clientList);
-      // }, 3000);
-    })();
-  }, []);
+  const { clients } = useClient();
 
   return (
     <Flex w="100%" direction="column">
