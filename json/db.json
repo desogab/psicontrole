@@ -10,6 +10,26 @@
       "email": "mariajoaquina@gmail.com",
       "phone": "22999858585",
       "consultationPrice": "120",
+      "clientAddress": {
+        "id": "1",
+        "street": "Rua Doutor Ferreira Paes",
+        "district": "Penha",
+        "number": 54,
+        "city": "Campos dos Goytacazes",
+        "complement": "Casa",
+        "state": "RJ",
+        "zipcode": "28021284"
+      },
+      "clientEmergency": {
+        "id": "1",
+        "name": "Astolfo Crystal",
+        "phone": "22999858581"
+      },
+      "clientSponsor": {
+        "id": "1",
+        "name": "Marizete Tedesco",
+        "cpf": "12345678900"
+      },
       "createdAt": "2022-12-17T03:24:00",
       "updatedAt": ""
     },
@@ -23,6 +43,26 @@
       "email": "josefapereira@gmail.com",
       "phone": "22999858584",
       "consultationPrice": "200",
+      "clientAddress": {
+        "id": "2",
+        "street": "Rua Doutor Ferreira Paes",
+        "district": "Penha",
+        "number": 54,
+        "city": "Campos dos Goytacazes",
+        "complement": "Casa",
+        "state": "RJ",
+        "zipcode": "28021284"
+      },
+      "clientEmergency": {
+        "id": "2",
+        "name": "Astolfo Crystal",
+        "phone": "22999858581"
+      },
+      "clientSponsor": {
+        "id": "2",
+        "name": "Marizete Tedesco",
+        "cpf": "12345678900"
+      },
       "createdAt": "2021-12-17T03:24:00",
       "updatedAt": ""
     },
@@ -36,6 +76,26 @@
       "email": "mohamedali@gmail.com",
       "phone": "22999858586",
       "consultationPrice": "200",
+      "clientAddress": {
+        "id": "3",
+        "street": "Rua Doutor Ferreira Paes",
+        "district": "Penha",
+        "number": 54,
+        "city": "Campos dos Goytacazes",
+        "complement": "Casa",
+        "state": "RJ",
+        "zipcode": "28021284"
+      },
+      "clientEmergency": {
+        "id": "3",
+        "name": "Astolfo Crystal",
+        "phone": "22999858581"
+      },
+      "clientSponsor": {
+        "id": "3",
+        "name": "Marizete Tedesco",
+        "cpf": "12345678900"
+      },
       "createdAt": "2022-11-17T03:24:00",
       "updatedAt": ""
     },
@@ -49,6 +109,13 @@
       "email": "mariajoao@gmail.com",
       "phone": "22999858589",
       "consultationPrice": "150",
+      "clientAddress": null,
+      "clientEmergency": {
+        "id": "4",
+        "name": "Astolfo Crystal",
+        "phone": "22999858581"
+      },
+      "clientSponsor": null,
       "createdAt": "2022-12-17T03:24:00",
       "updatedAt": ""
     },
@@ -62,6 +129,22 @@
       "email": "josepinto@gmail.com",
       "phone": "22999858575",
       "consultationPrice": "120",
+      "clientAddress": {
+        "id": "5",
+        "street": "Rua Doutor Ferreira Paes",
+        "district": "Penha",
+        "number": 54,
+        "city": "Campos dos Goytacazes",
+        "complement": "Casa",
+        "state": "RJ",
+        "zipcode": "28021284"
+      },
+      "clientEmergency": {
+        "id": "5",
+        "name": "Astolfo Crystal",
+        "phone": "22999858581"
+      },
+      "clientSponsor": null,
       "createdAt": "2022-10-17T03:24:00",
       "updatedAt": ""
     }

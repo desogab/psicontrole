@@ -25,6 +25,10 @@
     ],
     "rules": {
         "react/jsx-uses-react": "off",
+        "react/jsx-props-no-spreading": [
+            "off"
+        ],
+        "react/jsx-no-constructed-context-values": "off",
         "react/react-in-jsx-scope": "off",
         // Problem: “‘no-use-before-define”
         // Error sample: ‘React’ was used before it was defined
