@@ -1,0 +1,69 @@
+{
+  "clients": [
+    {
+      "id": "1",
+      "active": true,
+      "sponsor": false,
+      "name": "Maria Joaquina",
+      "birthdate": "1995-12-17T03:24:00",
+      "cpf": "12345678912",
+      "email": "mariajoaquina@gmail.com",
+      "phone": "22999858585",
+      "consultationPrice": "120",
+      "createdAt": "2022-12-17T03:24:00",
+      "updatedAt": ""
+    },
+    {
+      "id": "2",
+      "active": true,
+      "sponsor": true,
+      "name": "Josefa Pereira",
+      "birthdate": "1994-12-17T03:24:00",
+      "cpf": "12345678913",
+      "email": "josefapereira@gmail.com",
+      "phone": "22999858584",
+      "consultationPrice": "200",
+      "createdAt": "2021-12-17T03:24:00",
+      "updatedAt": ""
+    },
+    {
+      "id": "3",
+      "active": true,
+      "sponsor": false,
+      "name": "Mohamed Ali",
+      "birthdate": "1993-12-17T03:24:00",
+      "cpf": "12345678914",
+      "email": "mohamedali@gmail.com",
+      "phone": "22999858586",
+      "consultationPrice": "200",
+      "createdAt": "2022-11-17T03:24:00",
+      "updatedAt": ""
+    },
+    {
+      "id": "4",
+      "active": true,
+      "sponsor": true,
+      "name": "Maria Joao",
+      "birthdate": "1990-12-17T03:24:00",
+      "cpf": "12345678916",
+      "email": "mariajoao@gmail.com",
+      "phone": "22999858589",
+      "consultationPrice": "150",
+      "createdAt": "2022-12-17T03:24:00",
+      "updatedAt": ""
+    },
+    {
+      "id": "5",
+      "active": true,
+      "sponsor": false,
+      "name": "Jose Pinto",
+      "birthdate": "1992-12-17T03:24:00",
+      "cpf": "12345678912",
+      "email": "josepinto@gmail.com",
+      "phone": "22999858575",
+      "consultationPrice": "120",
+      "createdAt": "2022-10-17T03:24:00",
+      "updatedAt": ""
+    }
+  ]
+}
