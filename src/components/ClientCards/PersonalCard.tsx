@@ -46,14 +46,11 @@ export default function PersonalCard({ client }: PersonalCardProps) {
     console.log(data);
   };
 
-  useEffect(() => {
-    if (defaultValues !== undefined) reset(defaultValues);
-  }, [client]);
-
   return (
     <Box p={4} borderRadius="2xl" boxShadow="base">
       <Heading as="h3" size="md" mb="2">Informações Básicas</Heading>
       <form onSubmit={handleSubmit(onSubmit)}>
+
         <HStack mb="2" alignContent="flex-start" alignItems="flex-start">
           <FormControl isInvalid={!!errors.name}>
             <FormLabel htmlFor="name">Nome</FormLabel>
@@ -63,6 +60,7 @@ export default function PersonalCard({ client }: PersonalCardProps) {
             </FormErrorMessage>
           </FormControl>
         </HStack>
+
         <HStack mb="2">
           <FormControl isInvalid={!!errors.email}>
             <FormLabel htmlFor="email">Email</FormLabel>
@@ -79,6 +77,7 @@ export default function PersonalCard({ client }: PersonalCardProps) {
             </FormErrorMessage>
           </FormControl>
         </HStack>
+
         <HStack mb="2">
           <FormControl isInvalid={!!errors.cpf}>
             <FormLabel htmlFor="cpf">CPF</FormLabel>
@@ -95,6 +94,7 @@ export default function PersonalCard({ client }: PersonalCardProps) {
             </FormErrorMessage>
           </FormControl>
         </HStack>
+
         <Button type="submit" isLoading={isSubmitting}>Salvar</Button>
       </form>
     </Box>

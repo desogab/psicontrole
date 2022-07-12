@@ -50,16 +50,12 @@ export function AddressCard({ clientAddress }: AddressCardProps) {
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     console.log(data);
   };
-
-  useEffect(() => {
-    if (defaultValues !== undefined) reset(defaultValues);
-  }, [clientAddress]);
-
   return (
 
     <Box p={4} borderRadius="2xl" boxShadow="base">
       <Heading as="h3" size="md" mb="2">Endereço</Heading>
       <form onSubmit={handleSubmit(onSubmit)}>
+
         <VStack mb="2" alignContent="flex-start" alignItems="flex-start">
           <FormControl isInvalid={!!errors.zipcode}>
             <FormLabel htmlFor="zipcode">CEP</FormLabel>
@@ -76,6 +72,7 @@ export function AddressCard({ clientAddress }: AddressCardProps) {
             </FormErrorMessage>
           </FormControl>
         </VStack>
+
         <HStack mb="2">
           <FormControl isInvalid={!!errors.district}>
             <FormLabel htmlFor="district">Bairro</FormLabel>
@@ -92,6 +89,7 @@ export function AddressCard({ clientAddress }: AddressCardProps) {
             </FormErrorMessage>
           </FormControl>
         </HStack>
+
         <HStack mb="2">
           <FormControl isInvalid={!!errors.city}>
             <FormLabel htmlFor="city">Cidade</FormLabel>
@@ -101,6 +99,7 @@ export function AddressCard({ clientAddress }: AddressCardProps) {
             </FormErrorMessage>
           </FormControl>
         </HStack>
+
         <HStack mb="2">
           <FormControl isInvalid={!!errors.complement}>
             <FormLabel htmlFor="complement">Complemento</FormLabel>
@@ -117,6 +116,7 @@ export function AddressCard({ clientAddress }: AddressCardProps) {
             </FormErrorMessage>
           </FormControl>
         </HStack>
+
         <Button type="submit" isLoading={isSubmitting}>Salvar</Button>
       </form>
     </Box>
