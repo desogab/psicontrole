@@ -48,8 +48,20 @@ export function AddressCard({ clientAddress }: AddressCardProps) {
   });
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
-    console.log(data);
+    const response = new Promise<void>((resolve) => {
+      setTimeout(() => {
+        // eslint-disable-next-line no-alert
+        alert(JSON.stringify(data, null, 2));
+        resolve();
+      }, 1500);
+    });
+    return response;
   };
+
+  useEffect(() => {
+    reset(defaultValues);
+  }, [clientAddress]);
+
   return (
 
     <Box p={4} borderRadius="2xl" boxShadow="base">
