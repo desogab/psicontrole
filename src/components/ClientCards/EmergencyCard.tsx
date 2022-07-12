@@ -1,17 +1,19 @@
 import {
   Box,
   Button,
+  EditableInput,
   FormControl,
   FormErrorMessage,
   FormLabel,
   Heading,
   HStack,
-  Input,
 } from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { schemaClientEmergency } from '../../models/yup/formSchema';
 import { ClientInfo } from '../../types';
+import { EditableLayout } from '../EditableLayout/EditableLayout';
 
 interface FormInputs {
   name: string;
@@ -29,15 +31,26 @@ export function EmergencyCard({ clientEmergency }: EmergencyCardProps) {
   };
 
   const {
-    register, handleSubmit, formState: { errors, isSubmitting },
+    register, reset, handleSubmit, formState: { errors, isSubmitting },
   } = useForm<FormInputs>({
     resolver: yupResolver(schemaClientEmergency),
     defaultValues,
   });
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
-    console.log(data);
+    const response = new Promise<void>((resolve) => {
+      setTimeout(() => {
+        // eslint-disable-next-line no-alert
+        alert(JSON.stringify(data, null, 2));
+        resolve();
+      }, 1500);
+    });
+    return response;
   };
+
+  useEffect(() => {
+    reset(defaultValues);
+  }, [clientEmergency]);
 
   return (
     <Box p={4} borderRadius="2xl" boxShadow="base">
@@ -45,23 +58,31 @@ export function EmergencyCard({ clientEmergency }: EmergencyCardProps) {
       <form onSubmit={handleSubmit(onSubmit)}>
 
         <HStack mb="2" alignContent="flex-start" alignItems="flex-start">
+
           <FormControl isInvalid={!!errors.name}>
-            <FormLabel htmlFor="name">Nome</FormLabel>
-            <Input id="name" type="text" {...register('name')} />
+            <FormLabel htmlFor="nameEmergency">Nome</FormLabel>
+            <EditableLayout defaultValue={defaultValues.name}>
+              <EditableInput id="nameEmergency" type="text" {...register('name')} />
+            </EditableLayout>
             <FormErrorMessage>
               {errors.name && errors.name.message}
             </FormErrorMessage>
           </FormControl>
+
         </HStack>
 
         <HStack mb="2">
+
           <FormControl isInvalid={!!errors.phone}>
-            <FormLabel htmlFor="phone">Telefone</FormLabel>
-            <Input id="phone" type="text" {...register('phone')} />
+            <FormLabel htmlFor="phoneEmergency">Telefone</FormLabel>
+            <EditableLayout defaultValue={defaultValues.phone}>
+              <EditableInput id="phoneEmergency" type="text" {...register('phone')} />
+            </EditableLayout>
             <FormErrorMessage>
               {errors.phone && errors.phone.message}
             </FormErrorMessage>
           </FormControl>
+
         </HStack>
 
         <Button type="submit" isLoading={isSubmitting}>Salvar</Button>
