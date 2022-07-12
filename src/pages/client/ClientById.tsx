@@ -40,7 +40,7 @@ export function ClientById() {
 
       </Flex>
       <SimpleGrid spacing={3}>
-        <PersonalCard client={client} />
+        {client && <PersonalCard client={client} />}
         {client?.clientAddress && <AddressCard clientAddress={client?.clientAddress} />}
         {client?.clientEmergency && <EmergencyCard clientEmergency={client?.clientEmergency} />}
       </SimpleGrid>

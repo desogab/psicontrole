@@ -1,6 +1,8 @@
 import {
   Editable,
   EditablePreview,
+  Tooltip,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { EditableControls } from './EditableControls';
@@ -19,9 +21,18 @@ export function EditableLayout({
       alignItems="center"
       justifyContent="space-between"
       isPreviewFocusable
+      selectAllOnFocus
       defaultValue={defaultValue}
+      borderRadius="base"
     >
-      <EditablePreview />
+      <Tooltip label="clique para editar">
+        <EditablePreview
+          px={2}
+          _hover={{
+            background: useColorModeValue('gray.100', 'gray.700'),
+          }}
+        />
+      </Tooltip>
 
       {children}
 

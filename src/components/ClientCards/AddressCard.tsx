@@ -8,12 +8,14 @@ import {
   Box,
   FormErrorMessage,
   Button,
+  EditableInput,
 } from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { schemaClientAddress } from '../../models/yup/formSchema';
 import { ClientInfo } from '../../types';
+import { EditableLayout } from '../EditableLayout/EditableLayout';
 
 interface FormInputs {
   zipcode: string;
@@ -69,43 +71,58 @@ export function AddressCard({ clientAddress }: AddressCardProps) {
       <form onSubmit={handleSubmit(onSubmit)}>
 
         <VStack mb="2" alignContent="flex-start" alignItems="flex-start">
+
           <FormControl isInvalid={!!errors.zipcode}>
-            <FormLabel htmlFor="zipcode">CEP</FormLabel>
-            <Input w="50%" id="zipcode" type="text" {...register('zipcode')} />
+            <FormLabel pl={2} htmlFor="zipcode">CEP</FormLabel>
+            <EditableLayout defaultValue={defaultValues.zipcode}>
+              <EditableInput w="50%" id="zipcode" type="text" {...register('zipcode')} />
+            </EditableLayout>
             <FormErrorMessage>
               {errors.zipcode && errors.zipcode.message}
             </FormErrorMessage>
           </FormControl>
+
           <FormControl isInvalid={!!errors.street}>
-            <FormLabel htmlFor="street">Rua</FormLabel>
-            <Input id="street" type="text" {...register('street')} />
+            <FormLabel pl={2} htmlFor="street">Rua</FormLabel>
+            <EditableLayout defaultValue={defaultValues.street}>
+              <EditableInput id="street" type="text" {...register('street')} />
+            </EditableLayout>
             <FormErrorMessage>
               {errors.street && errors.street.message}
             </FormErrorMessage>
           </FormControl>
+
         </VStack>
 
         <HStack mb="2">
           <FormControl isInvalid={!!errors.district}>
-            <FormLabel htmlFor="district">Bairro</FormLabel>
-            <Input id="district" type="text" {...register('district')} />
+            <FormLabel pl={2} htmlFor="district">Bairro</FormLabel>
+            <EditableLayout defaultValue={defaultValues.district}>
+              <EditableInput id="district" type="text" {...register('district')} />
+            </EditableLayout>
             <FormErrorMessage>
               {errors.district && errors.district.message}
             </FormErrorMessage>
           </FormControl>
+
           <FormControl isInvalid={!!errors.number}>
-            <FormLabel htmlFor="number">Número</FormLabel>
-            <Input id="number" type="number" {...register('number')} />
+            <FormLabel pl={2} htmlFor="number">Número</FormLabel>
+            <EditableLayout defaultValue={defaultValues.number as any}>
+              <EditableInput id="number" type="number" {...register('number')} />
+            </EditableLayout>
             <FormErrorMessage>
               {errors.number && errors.number.message}
             </FormErrorMessage>
           </FormControl>
+
         </HStack>
 
         <HStack mb="2">
           <FormControl isInvalid={!!errors.city}>
-            <FormLabel htmlFor="city">Cidade</FormLabel>
-            <Input id="city" type="text" {...register('city')} />
+            <FormLabel pl={2} htmlFor="city">Cidade</FormLabel>
+            <EditableLayout defaultValue={defaultValues.city}>
+              <EditableInput id="city" type="text" {...register('city')} />
+            </EditableLayout>
             <FormErrorMessage>
               {errors.city && errors.city.message}
             </FormErrorMessage>
@@ -114,15 +131,19 @@ export function AddressCard({ clientAddress }: AddressCardProps) {
 
         <HStack mb="2">
           <FormControl isInvalid={!!errors.complement}>
-            <FormLabel htmlFor="complement">Complemento</FormLabel>
-            <Input id="complement" type="text" {...register('complement')} />
+            <FormLabel pl={2} htmlFor="complement">Complemento</FormLabel>
+            <EditableLayout defaultValue={defaultValues.complement}>
+              <EditableInput id="complement" type="text" {...register('complement')} />
+            </EditableLayout>
             <FormErrorMessage>
               {errors.complement && errors.complement.message}
             </FormErrorMessage>
           </FormControl>
           <FormControl isInvalid={!!errors.state}>
-            <FormLabel htmlFor="state">Estado</FormLabel>
-            <Input id="state" type="text" {...register('state')} />
+            <FormLabel pl={2} htmlFor="state">Estado</FormLabel>
+            <EditableLayout defaultValue={defaultValues.state}>
+              <EditableInput id="state" type="text" {...register('state')} />
+            </EditableLayout>
             <FormErrorMessage>
               {errors.state && errors.state.message}
             </FormErrorMessage>

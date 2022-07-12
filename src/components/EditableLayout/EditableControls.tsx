@@ -6,7 +6,6 @@ export function EditableControls() {
     isEditing,
     getSubmitButtonProps,
     getCancelButtonProps,
-    getEditButtonProps,
   } = useEditableControls();
 
   return isEditing ? (
@@ -18,5 +17,5 @@ export function EditableControls() {
         {...getCancelButtonProps()}
       />
     </ButtonGroup>
-  ) : <IconButton aria-label="editar campo" size="sm" icon={<EditIcon />} {...getEditButtonProps()} />;
+  ) : null;
 }

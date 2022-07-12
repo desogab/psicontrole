@@ -60,7 +60,7 @@ export function EmergencyCard({ clientEmergency }: EmergencyCardProps) {
         <HStack mb="2" alignContent="flex-start" alignItems="flex-start">
 
           <FormControl isInvalid={!!errors.name}>
-            <FormLabel htmlFor="nameEmergency">Nome</FormLabel>
+            <FormLabel pl={2} htmlFor="nameEmergency">Nome</FormLabel>
             <EditableLayout defaultValue={defaultValues.name}>
               <EditableInput id="nameEmergency" type="text" {...register('name')} />
             </EditableLayout>
@@ -74,7 +74,7 @@ export function EmergencyCard({ clientEmergency }: EmergencyCardProps) {
         <HStack mb="2">
 
           <FormControl isInvalid={!!errors.phone}>
-            <FormLabel htmlFor="phoneEmergency">Telefone</FormLabel>
+            <FormLabel pl={2} htmlFor="phoneEmergency">Telefone</FormLabel>
             <EditableLayout defaultValue={defaultValues.phone}>
               <EditableInput id="phoneEmergency" type="text" {...register('phone')} />
             </EditableLayout>
