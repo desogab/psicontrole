@@ -6,6 +6,7 @@ import { ClientInfo } from '../../types';
 interface ClientContextData {
   clients: ClientInfo[];
   getClientById: (id: string) => Promise<ClientInfo>;
+  createClient: (data: ClientInfo) => Promise<void | ClientInfo>;
 }
 
 const ClientContext = createContext({} as ClientContextData);
@@ -32,8 +33,20 @@ export function ClientProvider({ children }: ClientProviderProps) {
     return clientById;
   }
 
+  async function createClient(data: ClientInfo) {
+    await fetch('http://localhost:3001/clients', {
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      method: 'POST',
+      body: JSON.stringify({
+        ...data,
+      }),
+    })
+      .then(() => console.log('created'))
+      .catch(() => console.log('fail'));
+  }
+
   return (
-    <ClientContext.Provider value={{ clients, getClientById }}>
+    <ClientContext.Provider value={{ clients, getClientById, createClient }}>
       {children}
     </ClientContext.Provider>
   );

@@ -37,9 +37,9 @@ export interface ClientInfo {
   email: string | '';
   phone: string;
   consultationPrice: number;
-  clientAddress: ClientAddress;
-  clientEmergency: ClientEmergency;
-  clientSponsor: ClientSponsor;
+  clientAddress: ClientAddress | null;
+  clientEmergency: ClientEmergency | null;
+  clientSponsor: ClientSponsor | null;
   createdAt: string;
   updatedAt: string | null;
 }

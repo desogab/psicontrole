@@ -35,7 +35,7 @@ export function Header() {
         <IconButton
           aria-label="add new client"
           as={Link}
-          to="#"
+          to="/clients/create"
           borderRadius="full"
           variant="ghost"
         >
