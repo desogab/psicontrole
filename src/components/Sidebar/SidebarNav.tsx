@@ -48,8 +48,8 @@ export function SidebarNav() {
               Geral
             </Text>
             <VStack mt={2}>
-              <Button as={Link} w="100%" to="/" leftIcon={<Icon as={FaRegChartBar} />}>Dashboard</Button>
-              <Button as={Link} w="100%" to="clients" leftIcon={<Icon as={FaUserFriends} />}>Clientes</Button>
+              <Button as={Link} w="100%" to="#" leftIcon={<Icon as={FaRegChartBar} />}>Dashboard</Button>
+              <Button as={Link} w="100%" to="/clients" leftIcon={<Icon as={FaUserFriends} />}>Clientes</Button>
             </VStack>
           </DrawerBody>
         </DrawerContent>
