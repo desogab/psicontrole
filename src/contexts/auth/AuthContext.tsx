@@ -38,7 +38,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
   useEffect(() => {
     if (getUser !== null) {
       setUser(getUser as UserInfo);
-      navigate('/clients', { replace: true });
     }
   }, []);
 
