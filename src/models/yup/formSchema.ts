@@ -1,5 +1,10 @@
 import * as yup from 'yup';
 
+export const schemaAuthentication = yup.object({
+  email: yup.string().email().required(),
+  password: yup.string().required(),
+}).required();
+
 export const schemaClientBasicInfo = yup.object({
   name: yup.string().required(),
   email: yup.string().email().required(),
