@@ -6,7 +6,11 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+
+# Json Server files
 json
+db.json
+
 node_modules
 dist
 dist-ssr
