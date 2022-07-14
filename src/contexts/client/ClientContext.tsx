@@ -1,6 +1,7 @@
 import {
   createContext, ReactNode, useContext, useEffect, useState,
 } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ClientInfo } from '../../types';
 
 interface ClientContextData {
@@ -17,6 +18,7 @@ interface ClientProviderProps {
 
 export function ClientProvider({ children }: ClientProviderProps) {
   const [clients, setClients] = useState<ClientInfo[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
@@ -39,9 +41,13 @@ export function ClientProvider({ children }: ClientProviderProps) {
       method: 'POST',
       body: JSON.stringify({
         ...data,
+        active: true,
       }),
     })
-      .then(() => console.log('created'))
+      .then(() => {
+        console.log('created');
+        navigate(-1);
+      })
       .catch(() => console.log('fail'));
   }
 

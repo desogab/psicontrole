@@ -115,7 +115,7 @@ export function ClientCreate() {
               variant="outline"
               onClick={() => navigate(-1)}
             >
-              Cancelar
+              Voltar
             </Button>
             <Button type="submit" isLoading={isSubmitting}>Cadastrar</Button>
           </HStack>

@@ -14,16 +14,16 @@ export const schemaClientBasicInfo = yup.object({
 }).required();
 
 export const schemaClientAddress = yup.object({
-  zipcode: yup.string().required(),
-  street: yup.string().required(),
-  district: yup.string().required(),
-  number: yup.number().required(),
-  city: yup.string().required(),
+  zipcode: yup.string(),
+  street: yup.string(),
+  district: yup.string(),
+  number: yup.number(),
+  city: yup.string(),
   complement: yup.string(),
-  state: yup.string().required(),
+  state: yup.string(),
 }).required();
 
 export const schemaClientEmergency = yup.object({
-  name: yup.string().required(),
-  phone: yup.string().required(),
+  name: yup.string(),
+  phone: yup.string(),
 }).required();
