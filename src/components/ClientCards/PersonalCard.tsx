@@ -7,6 +7,7 @@ import {
   Button,
   FormErrorMessage,
   EditableInput,
+  VStack,
 } from '@chakra-ui/react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -14,13 +15,14 @@ import { useEffect } from 'react';
 import { schemaClientBasicInfo } from '../../models/yup/formSchema';
 import { ClientInfo } from '../../types';
 import { EditableLayout } from '../EditableLayout/EditableLayout';
+import { formatCurrecy } from '../../utils/formatCurrency';
 
 interface FormInputs {
   name: string;
   email: string;
   phone: string;
   cpf: string;
-  consultationPrice: number;
+  consultationPrice: string;
 }
 
 interface PersonalCardProps {
@@ -28,12 +30,14 @@ interface PersonalCardProps {
 }
 
 export default function PersonalCard({ client }: PersonalCardProps) {
+  const getPriceFormated = formatCurrecy.format(client?.consultationPrice || 0);
+
   const defaultValues = {
     name: client?.name,
     email: client?.email,
     phone: client?.phone,
     cpf: client?.cpf,
-    consultationPrice: client?.consultationPrice,
+    consultationPrice: getPriceFormated,
   };
 
   const {
@@ -60,13 +64,13 @@ export default function PersonalCard({ client }: PersonalCardProps) {
 
   return (
     <Box p={4} borderRadius="2xl" boxShadow="base">
-      <Heading pl={2} as="h3" size="md" mb="2">Informações Básicas</Heading>
+      <Heading pl={2} as="h2" size="lg" mb="2">Informações Básicas</Heading>
       <form onSubmit={handleSubmit(onSubmit)}>
 
         <HStack mb="2">
 
           <FormControl isInvalid={!!errors.name}>
-            <FormLabel pl={2} htmlFor="name">Nome</FormLabel>
+            <FormLabel pl={2} fontWeight="bold" color="green.500" htmlFor="name">Nome</FormLabel>
             <EditableLayout defaultValue={defaultValues.name}>
               <EditableInput id="name" type="text" {...register('name')} />
             </EditableLayout>
@@ -77,10 +81,10 @@ export default function PersonalCard({ client }: PersonalCardProps) {
 
         </HStack>
 
-        <HStack mb="2">
+        <VStack mb="2">
 
           <FormControl isInvalid={!!errors.email}>
-            <FormLabel pl={2} htmlFor="email">Email</FormLabel>
+            <FormLabel pl={2} fontWeight="bold" color="green.500" htmlFor="email">Email</FormLabel>
             <EditableLayout defaultValue={defaultValues.email}>
               <EditableInput id="email" type="email" {...register('email')} />
             </EditableLayout>
@@ -90,7 +94,7 @@ export default function PersonalCard({ client }: PersonalCardProps) {
           </FormControl>
 
           <FormControl isInvalid={!!errors.phone}>
-            <FormLabel pl={2} htmlFor="phone">Telefone</FormLabel>
+            <FormLabel pl={2} fontWeight="bold" color="green.500" htmlFor="phone">Telefone</FormLabel>
             <EditableLayout defaultValue={defaultValues.phone}>
               <EditableInput id="phone" type="tel" {...register('phone')} />
             </EditableLayout>
@@ -99,12 +103,12 @@ export default function PersonalCard({ client }: PersonalCardProps) {
             </FormErrorMessage>
           </FormControl>
 
-        </HStack>
+        </VStack>
 
-        <HStack mb="2">
+        <HStack mb="2" alignContent="space-between">
 
           <FormControl isInvalid={!!errors.cpf}>
-            <FormLabel pl={2} htmlFor="cpf">CPF</FormLabel>
+            <FormLabel pl={2} fontWeight="bold" color="green.500" htmlFor="cpf">CPF</FormLabel>
             <EditableLayout defaultValue={defaultValues.cpf}>
               <EditableInput id="cpf" type="text" {...register('cpf')} />
             </EditableLayout>
@@ -114,9 +118,9 @@ export default function PersonalCard({ client }: PersonalCardProps) {
           </FormControl>
 
           <FormControl isInvalid={!!errors.consultationPrice}>
-            <FormLabel pl={2} htmlFor="consultationPrice">Valor Consulta</FormLabel>
-            <EditableLayout defaultValue={defaultValues.consultationPrice as any}>
-              <EditableInput id="consultationPrice" type="number" {...register('consultationPrice')} />
+            <FormLabel pl={2} fontWeight="bold" color="green.500" htmlFor="consultationPrice">Valor Consulta</FormLabel>
+            <EditableLayout defaultValue={defaultValues.consultationPrice}>
+              <EditableInput id="consultationPrice" type="text" {...register('consultationPrice')} />
             </EditableLayout>
             <FormErrorMessage>
               {errors.consultationPrice && errors.consultationPrice.message}

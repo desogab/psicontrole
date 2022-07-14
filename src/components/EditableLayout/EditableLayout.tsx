@@ -24,6 +24,8 @@ export function EditableLayout({
       selectAllOnFocus
       defaultValue={defaultValue}
       borderRadius="base"
+      boxShadow="inner"
+      backgroundColor="whiteAlpha.100"
     >
       <Tooltip label="clique para editar">
         <EditablePreview

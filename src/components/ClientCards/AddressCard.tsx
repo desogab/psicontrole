@@ -67,13 +67,13 @@ export function AddressCard({ clientAddress }: AddressCardProps) {
   return (
 
     <Box p={4} borderRadius="2xl" boxShadow="base">
-      <Heading as="h3" size="md" mb="2">Endereço</Heading>
+      <Heading as="h2" size="lg" mb="2">Endereço</Heading>
       <form onSubmit={handleSubmit(onSubmit)}>
 
         <VStack mb="2" alignContent="flex-start" alignItems="flex-start">
 
           <FormControl isInvalid={!!errors.zipcode}>
-            <FormLabel pl={2} htmlFor="zipcode">CEP</FormLabel>
+            <FormLabel pl={2} fontWeight="bold" color="green.500" htmlFor="zipcode">CEP</FormLabel>
             <EditableLayout defaultValue={defaultValues.zipcode}>
               <EditableInput w="50%" id="zipcode" type="text" {...register('zipcode')} />
             </EditableLayout>
@@ -83,7 +83,7 @@ export function AddressCard({ clientAddress }: AddressCardProps) {
           </FormControl>
 
           <FormControl isInvalid={!!errors.street}>
-            <FormLabel pl={2} htmlFor="street">Rua</FormLabel>
+            <FormLabel pl={2} fontWeight="bold" color="green.500" htmlFor="street">Rua</FormLabel>
             <EditableLayout defaultValue={defaultValues.street}>
               <EditableInput id="street" type="text" {...register('street')} />
             </EditableLayout>
@@ -96,7 +96,7 @@ export function AddressCard({ clientAddress }: AddressCardProps) {
 
         <HStack mb="2">
           <FormControl isInvalid={!!errors.district}>
-            <FormLabel pl={2} htmlFor="district">Bairro</FormLabel>
+            <FormLabel pl={2} fontWeight="bold" color="green.500" htmlFor="district">Bairro</FormLabel>
             <EditableLayout defaultValue={defaultValues.district}>
               <EditableInput id="district" type="text" {...register('district')} />
             </EditableLayout>
@@ -106,7 +106,7 @@ export function AddressCard({ clientAddress }: AddressCardProps) {
           </FormControl>
 
           <FormControl isInvalid={!!errors.number}>
-            <FormLabel pl={2} htmlFor="number">Número</FormLabel>
+            <FormLabel pl={2} fontWeight="bold" color="green.500" htmlFor="number">Número</FormLabel>
             <EditableLayout defaultValue={defaultValues.number as any}>
               <EditableInput id="number" type="number" {...register('number')} />
             </EditableLayout>
@@ -119,7 +119,7 @@ export function AddressCard({ clientAddress }: AddressCardProps) {
 
         <HStack mb="2">
           <FormControl isInvalid={!!errors.city}>
-            <FormLabel pl={2} htmlFor="city">Cidade</FormLabel>
+            <FormLabel pl={2} fontWeight="bold" color="green.500" htmlFor="city">Cidade</FormLabel>
             <EditableLayout defaultValue={defaultValues.city}>
               <EditableInput id="city" type="text" {...register('city')} />
             </EditableLayout>
@@ -131,7 +131,7 @@ export function AddressCard({ clientAddress }: AddressCardProps) {
 
         <HStack mb="2">
           <FormControl isInvalid={!!errors.complement}>
-            <FormLabel pl={2} htmlFor="complement">Complemento</FormLabel>
+            <FormLabel pl={2} fontWeight="bold" color="green.500" htmlFor="complement">Complemento</FormLabel>
             <EditableLayout defaultValue={defaultValues.complement}>
               <EditableInput id="complement" type="text" {...register('complement')} />
             </EditableLayout>
@@ -140,7 +140,7 @@ export function AddressCard({ clientAddress }: AddressCardProps) {
             </FormErrorMessage>
           </FormControl>
           <FormControl isInvalid={!!errors.state}>
-            <FormLabel pl={2} htmlFor="state">Estado</FormLabel>
+            <FormLabel pl={2} fontWeight="bold" color="green.500" htmlFor="state">Estado</FormLabel>
             <EditableLayout defaultValue={defaultValues.state}>
               <EditableInput id="state" type="text" {...register('state')} />
             </EditableLayout>
